@@ -13,10 +13,11 @@ namespace Euler {
 		static void Main(string[] args) {
 			
 			var problems = new List<Problem> {
-				new Problem32(),
+				new Problem38(),
 			};
 						
 			foreach (var problem in problems) {
+				Helper.Write("Starting: " + problem.Name);
 				var start = DateTime.Now;
 				var answer = problem.Solve();
 				Helper.Write("The Answer For " + problem.Name + " is: " + answer);
