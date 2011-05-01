@@ -26,7 +26,7 @@ namespace Euler.Problems {
 
 			return results.Last().Second.ToString();
 		}
-
+		
 		private static List<Pair<int, int>> Do(BigInteger numberToCheck) {
 			for (int i = 9000; i < 10000; i++) {
 				var shouldContinue = true;
