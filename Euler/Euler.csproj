@@ -47,6 +47,14 @@
   <ItemGroup>
     <Compile Include="Helper.cs" />
     <Compile Include="Problem.cs" />
+    <Compile Include="Problems\Problem18.cs" />
+    <Compile Include="Problems\Problem19.cs" />
+    <Compile Include="Problems\Problem20.cs" />
+    <Compile Include="Problems\Problem21.cs" />
+    <Compile Include="Problems\Problem22.cs" />
+    <Compile Include="Problems\Problem23.cs" />
+    <Compile Include="Problems\Problem25.cs" />
+    <Compile Include="Problems\Problem26.cs" />
     <Compile Include="Problems\Problem27.cs" />
     <Compile Include="Problems\Problem28.cs" />
     <Compile Include="Problems\Problem29.cs" />
@@ -60,8 +68,31 @@
     <Compile Include="Problems\Problem38.cs" />
     <Compile Include="Problems\Problem39.cs" />
     <Compile Include="Problems\Problem40.cs" />
+    <Compile Include="Problems\Problem41.cs" />
+    <Compile Include="Problems\Problem42.cs" />
+    <Compile Include="Problems\Problem67.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Problem42">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Problem18">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Problem67">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\Problem22">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

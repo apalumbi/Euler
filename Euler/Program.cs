@@ -13,7 +13,7 @@ namespace Euler {
 		static void Main(string[] args) {
 			
 			var problems = new List<Problem> {
-				new Problem40(),
+				new Problem26(),
 			};
 						
 			foreach (var problem in problems) {

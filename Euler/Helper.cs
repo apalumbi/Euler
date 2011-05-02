@@ -20,7 +20,7 @@ namespace Euler {
 			Clipboard.SetDataObject(result.ToString(), false, 5, 200);
 		}
 
-		public static HashSet<int> BuildPrimes(int topNumber) {
+		public static HashSet<int> BuildPrimes(int topNumber, int bottomNumber = 2) {
 			var primeNumbers = new HashSet<int>();
 			var numbers = new BitArray(topNumber, true);
 			for (int i = 2; i < topNumber; i++)
@@ -31,12 +31,23 @@ namespace Euler {
 
 			int primes = 0;
 
-			for (int i = 2; i < topNumber; i++)
+			for (int i = bottomNumber; i < topNumber; i++)
 				if (numbers[i]) {
 					primeNumbers.Add(i);
 					primes++;
 				}
 			return primeNumbers;
+		}
+
+		public static List<int> GetDivisors(int number) {
+			var divisors = new List<int>();
+			for (int i = 1; i <= (number / 2); i++) {
+				var divisor = number % i;
+				if (divisor == 0) {
+					divisors.Add(i);
+				}
+			}
+			return divisors;
 		}
 
 		public static bool CannotBePandigital(string number) {
@@ -64,16 +75,18 @@ namespace Euler {
 			return instances;
 		}
 
-		public static bool IsPandigital(string number) {
-			if (number.Length != 9) {
+		public static bool IsPandigital(string number, bool checkLength = true, int onesCount = 1, int twosCount = 1, int threesCount = 1,
+																		int foursCount = 1, int fivesCount = 1, int sixesCount = 1, int sevensCount = 1,
+																		int eightsCount = 1, int ninesCount = 1, int zerosCount = 0) {
+			if (checkLength && number.Length != 9) {
 				return false;
 			}
 
 			var i = CountInstances(number);
 
-			return i.Ones == 1 && i.Twos == 1 && i.Threes == 1 && i.Fours == 1 &&
-						 i.Fives == 1 && i.Sixes == 1 && i.Sevens == 1 && i.Eights == 1 &&
-						 i.Nines == 1 && i.Zeros == 0;
+			return i.Ones == onesCount && i.Twos == twosCount && i.Threes == threesCount && i.Fours == foursCount &&
+						 i.Fives == fivesCount && i.Sixes == sixesCount && i.Sevens == sevensCount && i.Eights == eightsCount &&
+						 i.Nines == ninesCount && i.Zeros == 0;
 		}
 
 		class Instances {
