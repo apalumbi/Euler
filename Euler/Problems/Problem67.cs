@@ -27,8 +27,6 @@ namespace Euler.Problems {
 					maxValues.Add(rowToCalc[i]);
 				}
 				else {
-					int rowMax = 0;
-					int selection = 0;
 					for (int column = 0; column < rowToCalc.Count(); column++) {
 						if (column == 0) {
 							maxValues.Add(rowToCalc[column] + crunch[column]);
