@@ -1,3 +1,4 @@
 Euler/bin/**/*
 Euler/obj/**/*
 *.suo
+*.user
