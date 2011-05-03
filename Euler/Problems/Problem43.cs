@@ -24,7 +24,7 @@ namespace Euler.Problems {
 
 					if (pentagonalsLookup.Contains(sum) && pentagonalsLookup.Contains(diff)) {
 						var text = sum + " -- " + diff;
-						Console.WriteLine(text);
+						Helper.Write(text);
 						results.Add(text);
 					}
 				}

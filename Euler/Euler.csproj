@@ -48,8 +48,16 @@
     <Compile Include="Helper.cs" />
     <Compile Include="PermutationGenerator.cs" />
     <Compile Include="Problem.cs" />
+    <Compile Include="Problems\Problem01.cs" />
+    <Compile Include="Problems\Problem10.cs" />
+    <Compile Include="Problems\Problem11.cs" />
+    <Compile Include="Problems\Problem12.cs" />
+    <Compile Include="Problems\Problem13.cs" />
+    <Compile Include="Problems\Problem14.cs" />
+    <Compile Include="Problems\Problem16.cs" />
     <Compile Include="Problems\Problem18.cs" />
     <Compile Include="Problems\Problem19.cs" />
+    <Compile Include="Problems\Problem02.cs" />
     <Compile Include="Problems\Problem20.cs" />
     <Compile Include="Problems\Problem21.cs" />
     <Compile Include="Problems\Problem22.cs" />
@@ -60,6 +68,7 @@
     <Compile Include="Problems\Problem27.cs" />
     <Compile Include="Problems\Problem28.cs" />
     <Compile Include="Problems\Problem29.cs" />
+    <Compile Include="Problems\Problem03.cs" />
     <Compile Include="Problems\Problem30.cs" />
     <Compile Include="Problems\Problem31.cs" />
     <Compile Include="Problems\Problem32.cs" />
@@ -69,6 +78,7 @@
     <Compile Include="Problems\Problem37.cs" />
     <Compile Include="Problems\Problem38.cs" />
     <Compile Include="Problems\Problem39.cs" />
+    <Compile Include="Problems\Problem04.cs" />
     <Compile Include="Problems\Problem40.cs" />
     <Compile Include="Problems\Problem41.cs" />
     <Compile Include="Problems\Problem42.cs" />
@@ -77,7 +87,12 @@
     <Compile Include="Problems\Problem45.cs" />
     <Compile Include="Problems\Problem46.cs" />
     <Compile Include="Problems\Problem47.cs" />
+    <Compile Include="Problems\Problem05.cs" />
+    <Compile Include="Problems\Problem06.cs" />
     <Compile Include="Problems\Problem67.cs" />
+    <Compile Include="Problems\Problem07.cs" />
+    <Compile Include="Problems\Problem08.cs" />
+    <Compile Include="Problems\Problem09.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -20,7 +20,7 @@ namespace Euler.Problems {
 				termCount++;
 			}
 
-			Console.WriteLine(currentTerm);
+			Helper.Write(currentTerm);
 			return termCount.ToString();
 		}
 	}

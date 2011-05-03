@@ -43,7 +43,7 @@ namespace Euler.Problems {
 		//  var numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		//  permute2(numbers, 0, numbers.Count);
 		//  results.Sort();
-		//  Console.WriteLine(results[999999]);
+		//  Helper.Write(results[999999]);
 		//}
 
 		//static void permute2(List<int> numbers, int start, int n) {

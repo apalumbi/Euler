@@ -13,7 +13,7 @@ namespace Euler.Problems {
 				GetAmicables(amicables, i);
 			}
 
-			amicables.ForEach(Console.WriteLine);
+			amicables.ForEach(a => Helper.Write(a));
 			
 			return amicables.Sum().ToString();
 
