@@ -8,14 +8,33 @@ namespace Euler.Problems {
 	public class Problem43 : Problem {
 
 		public override string Solve() {
-			var count = 0;
-			for (BigInteger i = 1023456789; i <= 1032456789; i++) {
-				if (Helper.IsPandigital(i.ToString(), false, zerosCount: 1)) {
-					count++;
-				}
+			var pentagonals = new List<BigInteger>();
+			var pentagonalsLookup = new HashSet<BigInteger>();
+			for (BigInteger i = 1; i < 10000; i++) {
+				var p = Formula(i);
+				pentagonals.Add(p);
+				pentagonalsLookup.Add(p);
 			}
 
-			return count.ToString();
+			var results = new List<string>();
+			for (int i = 0; i < pentagonals.Count; i++) {
+				for (int j = 0; j < pentagonals.Count; j++) {
+					var sum = pentagonals[i] + pentagonals[j];
+					var diff = pentagonals[j] - pentagonals[i];
+
+					if (pentagonalsLookup.Contains(sum) && pentagonalsLookup.Contains(diff)) {
+						var text = sum + " -- " + diff;
+						Console.WriteLine(text);
+						results.Add(text);
+					}
+				}
+			}
+			
+			return "garf";
+		}
+
+		BigInteger Formula(BigInteger number) {
+			return number * ((3 * number) - 1 ) / 2;
 		}
 	}
 }

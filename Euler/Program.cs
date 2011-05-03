@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Numerics;
-using System.Collections;
 using Euler.Problems;
 
 namespace Euler {
@@ -13,7 +8,7 @@ namespace Euler {
 		static void Main(string[] args) {
 			
 			var problems = new List<Problem> {
-				new Problem43(),
+				new Problem47(),
 			};
 						
 			foreach (var problem in problems) {
