@@ -17,7 +17,7 @@ namespace Euler {
 		}
 
 		public static void Copy(object result) {
-			Clipboard.SetDataObject(result.ToString(), false, 5, 200);
+			//Clipboard.SetDataObject(result.ToString(), false, 5, 200);
 		}
 
 		public static HashSet<int> BuildPrimes(int topNumber, int bottomNumber = 2) {

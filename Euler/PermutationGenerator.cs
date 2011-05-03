@@ -5,9 +5,9 @@ using Euler.Problems;
 namespace Euler {
 	public class PermutationGenerator<T> {
 
-		private List<Pair<int, T>> elements;
-		private BigInteger numLeft;
-		private BigInteger total;
+		List<Pair<int, T>> elements;
+		BigInteger numLeft;
+		BigInteger total;
 
 		public PermutationGenerator(List<T> elements) {
 			this.elements = new List<Pair<int, T>>();
@@ -17,23 +17,23 @@ namespace Euler {
 				this.elements.Add(new Pair<int, T>(i, element));
 				i++;
 			}
-			total = getFactorial(elements.Count);
+			total = GetFactorial(elements.Count);
 			numLeft = total;
 		}
 
-		public BigInteger getNumLeft() {
+		public BigInteger GetNumLeft() {
 			return numLeft;
 		}
 
-		public BigInteger getTotal() {
-			return total;
+		public BigInteger Total {
+			get { return total; }
 		}
 
-		public bool hasMore() {
-			return numLeft.CompareTo(0) == 1;
+		public bool HasMore {
+			get { return numLeft.CompareTo(0) == 1; }
 		}
 
-		private static BigInteger getFactorial(int n) {
+		BigInteger GetFactorial(int n) {
 			BigInteger fact = 1;
 			for (BigInteger i = n; i > 1; i--) {
 				fact = fact * i;
@@ -41,7 +41,7 @@ namespace Euler {
 			return fact;
 		}
 
-		public List<Pair<int, T>> getNext() {
+		public List<Pair<int, T>> GetNext() {
 
 			if (numLeft == total) {
 				numLeft = numLeft - 1;
@@ -84,6 +84,19 @@ namespace Euler {
 
 			numLeft = numLeft - 1;
 			return elements;
+		}
+
+		public HashSet<string> GetAllPermutations() {
+			var results = new HashSet<string>();
+			while (HasMore) {
+				var perm = GetNext();
+				var result = "";
+				foreach (var p in perm) {
+					result += p.Second.ToString();
+				}
+				results.Add(result);
+			}
+			return results;
 		}
 	}
 }
