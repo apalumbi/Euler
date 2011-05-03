@@ -11,8 +11,9 @@ namespace Euler.Problems {
 			var primes = Helper.BuildPrimes(limit).ToList();
 
 			var mostConsecutive = 0;
+			var solutionSum = 0;
 			var lastPrimeUsed = 0;
-			for (int i = 0; i < limit; i++) {
+			for (int i = 0; i < 10; i++) {
 				var sum = 0;
 				var consecutive = 0;
 				var index = i;
@@ -23,12 +24,13 @@ namespace Euler.Problems {
 					if (primes.Contains(sum) && mostConsecutive < consecutive) {
 						mostConsecutive = consecutive;
 						lastPrimeUsed = lastPrime;
+						solutionSum = sum;
 					}
 					index++;	
 				}
 			}
 
-			return lastPrimeUsed.ToString() + " -- " + mostConsecutive.ToString();
+			return solutionSum + " -- " + lastPrimeUsed.ToString() + " -- " + mostConsecutive.ToString();
 
 		}
 	}

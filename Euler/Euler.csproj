@@ -87,10 +87,12 @@
     <Compile Include="Problems\Problem45.cs" />
     <Compile Include="Problems\Problem46.cs" />
     <Compile Include="Problems\Problem47.cs" />
+    <Compile Include="Problems\Problem48.cs" />
     <Compile Include="Problems\Problem05.cs" />
     <Compile Include="Problems\Problem06.cs" />
     <Compile Include="Problems\Problem49.cs" />
     <Compile Include="Problems\Problem50.cs" />
+    <Compile Include="Problems\Problem51.cs" />
     <Compile Include="Problems\Problem67.cs" />
     <Compile Include="Problems\Problem07.cs" />
     <Compile Include="Problems\Problem08.cs" />
