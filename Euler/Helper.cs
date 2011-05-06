@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using System.Numerics;
 
 namespace Euler {
 	public static class Helper {
@@ -37,6 +38,21 @@ namespace Euler {
 					primes++;
 				}
 			return primeNumbers;
+		}
+
+		public static bool IsPalindrome(string text) {
+			return text == string.Join("", text.Reverse());
+		}
+		
+		public static List<BigInteger> BuildFibonnaci(int numberOfTerms) {
+			var fibs = new List<BigInteger> { 0, 1 };
+
+			for (int termCount = 0; termCount < numberOfTerms; termCount++) {
+				var newTerm = fibs[termCount] + fibs[termCount + 1];
+				fibs.Add(newTerm);
+			}
+
+			return fibs;
 		}
 
 		public static List<int> GetDivisors(int number) {

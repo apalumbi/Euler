@@ -5,48 +5,37 @@ using System.Text;
 
 namespace Euler.Problems {
 	public class Problem51 : Problem {
-		private HashSet<int> primes;
+
 		public override string Solve() {
-			primes = Helper.BuildPrimes(1000000);
-			var primeStrings = primes.Select(p => p.ToString());
+			var primeLookup = Helper.BuildPrimes(100000);
 
-			var length = 2;
+			var countTarget = 8;
 
-			var pairs = new List<Pair<int, int>>();
-			while (length < 3) {
-				var numberToReplace = 1;
-				foreach (var prime in primeStrings.Where(p => p.Length == length)) {
-					while (numberToReplace <= length - 1) {
-						for (int index = 0; index < length; index++) {
-							for (int replacement = 0; replacement < 10; replacement++) {
-								pairs.Add(Formula(index, replacement, prime, numberToReplace));
-							}
-						}
-						numberToReplace++;
+			var numbers = new List<int>();
+			for (int i = 0; i < 100000; i++) {
+				numbers.Add(i);
+			}
+
+			foreach (var number in numbers) {
+				for (int index = 0; index < number.ToString().Length; index++) {
+					var modified = new List<string>();
+					for (int replacement = 1; replacement < 10; replacement++) {
+						modified.Add(Replace(number.ToString(), replacement.ToString(), index));
+					}
+					var primeCount = modified.Count(p => primeLookup.Contains(int.Parse(p)));
+					if (primeCount == countTarget) {
+						return modified.Min();
 					}
 				}
-				length++;
 			}
 
-			return pairs.Where(p => p.Second == pairs.Max(m => m.Second)).First().ToString();
+			return "";
 		}
 
-		Pair<int, int> Formula(int index, int replacement, string prime, int numberToReplace) {
-			var count = 0;
-			var primeOnes = new List<int>();
-			while (index + numberToReplace <= prime.Length) {
-				var numberList = prime.Select(c => c.ToString()).ToList();
-				for (int i = index; i < numberToReplace; i++) {
-					numberList[i] = replacement.ToString();
-				}
-				var newNumber = int.Parse(string.Join("", numberList));
-				if (primes.Contains(newNumber)) {
-					count++;
-					primeOnes.Add(newNumber);
-				}
-				index++;
-			}
-			return new Pair<int, int>(primeOnes.Min(), count);
+		string Replace(string text, string p, int index) {
+			var foo = text.ToList().Select(c => c.ToString()).ToList();
+			foo[index] = p;
+			return string.Join("", foo);
 		}
 	}
 }

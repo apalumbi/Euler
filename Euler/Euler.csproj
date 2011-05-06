@@ -97,6 +97,11 @@
     <Compile Include="Problems\Problem07.cs" />
     <Compile Include="Problems\Problem08.cs" />
     <Compile Include="Problems\Problem09.cs" />
+    <Compile Include="Problems\RoseCode01.cs" />
+    <Compile Include="Problems\RoseCode02.cs" />
+    <Compile Include="Problems\RoseCode03.cs" />
+    <Compile Include="Problems\RoseCode04.cs" />
+    <Compile Include="Problems\RoseCode05.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
