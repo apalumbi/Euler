@@ -17,11 +17,9 @@ namespace Euler.Problems {
 			}
 
 			foreach (var number in numbers) {
-				for (int index = 0; index < number.ToString().Length; index++) {
+				for (int index = 1; index < number.ToString().Length; index++) {
 					var modified = new List<string>();
-					for (int replacement = 1; replacement < 10; replacement++) {
-						modified.Add(Replace(number.ToString(), replacement.ToString(), index));
-					}
+					CreateModifications(number, index, modified);
 					var primeCount = modified.Count(p => primeLookup.Contains(int.Parse(p)));
 					if (primeCount == countTarget) {
 						return modified.Min();
@@ -32,9 +30,22 @@ namespace Euler.Problems {
 			return "";
 		}
 
+		private void CreateModifications(int number, int index, List<string> modified) {
+			for (int replacement = 0; replacement < 10; replacement++) {
+				var mod = Replace(number.ToString(), replacement.ToString(), index);
+				if (!String.IsNullOrEmpty(mod)) {
+					modified.Add(mod);
+				}
+			}
+		}
+
 		string Replace(string text, string p, int index) {
+			if (index + 1 >= text.Length) {
+				return "";
+			}
 			var foo = text.ToList().Select(c => c.ToString()).ToList();
 			foo[index] = p;
+			foo[index + 1] = p;
 			return string.Join("", foo);
 		}
 	}

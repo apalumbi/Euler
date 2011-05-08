@@ -65,7 +65,15 @@ namespace Euler {
 			}
 			return divisors;
 		}
-		
+
+		public static BigInteger BuildFactorial(BigInteger number) {
+			var temp = number;
+			for (int i = 1; i < number; i++) {
+				temp *= i;
+			}
+			return temp;
+		}
+
 		public static int GetWordCount(string name) {
 			var points = 0;
 			var chars = name.ToCharArray();
