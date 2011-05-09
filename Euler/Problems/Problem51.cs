@@ -7,46 +7,44 @@ namespace Euler.Problems {
 	public class Problem51 : Problem {
 
 		public override string Solve() {
-			var primeLookup = Helper.BuildPrimes(100000);
+			var primeLookup = Helper.BuildPrimes(10000000);
+			var lastPrime = primeLookup.Last();
+			var expectedPrimeFamilyCount = 8;
 
-			var countTarget = 8;
+			var replacement = "";
+			bool haveEnoughPrimes = true;
+			while (haveEnoughPrimes && replacement.Length < 4) {
+				replacement += "*";
+				var alreadyChecked = new HashSet<string>();
+				for (int i = 0; i < 999; i++) {
+					var sorted = i.ToStringList().OrderBy(c => c);
+					var sortedNumber = string.Join("", sorted);
+					if (!alreadyChecked.Contains(sortedNumber)) {
+						alreadyChecked.Add(sortedNumber);
+						var number = replacement + sortedNumber;
+						var perms = new PermutationGenerator<string>(number.ToStringList()).GetAllPermutations().Distinct();
 
-			var numbers = new List<int>();
-			for (int i = 0; i < 100000; i++) {
-				numbers.Add(i);
-			}
-
-			foreach (var number in numbers) {
-				for (int index = 1; index < number.ToString().Length; index++) {
-					var modified = new List<string>();
-					CreateModifications(number, index, modified);
-					var primeCount = modified.Count(p => primeLookup.Contains(int.Parse(p)));
-					if (primeCount == countTarget) {
-						return modified.Min();
+						foreach (var perm in perms) {
+							var family = new List<int>();
+							for (int j = 0; j < 10; j++) {
+								var numberString = perm.Replace("*", j.ToString());
+								if (!numberString.StartsWith("0")) {
+									family.Add(int.Parse(numberString));
+								}
+							}
+							if (family.Count > 0 && family.Max() > lastPrime) {
+								haveEnoughPrimes = false;
+							}
+							var primeCount = family.Count(p => primeLookup.Contains(p));
+							if (primeCount == expectedPrimeFamilyCount) {
+								return family.Min().ToString();
+							}
+						}
 					}
 				}
 			}
 
-			return "";
-		}
-
-		private void CreateModifications(int number, int index, List<string> modified) {
-			for (int replacement = 0; replacement < 10; replacement++) {
-				var mod = Replace(number.ToString(), replacement.ToString(), index);
-				if (!String.IsNullOrEmpty(mod)) {
-					modified.Add(mod);
-				}
-			}
-		}
-
-		string Replace(string text, string p, int index) {
-			if (index + 1 >= text.Length) {
-				return "";
-			}
-			var foo = text.ToList().Select(c => c.ToString()).ToList();
-			foo[index] = p;
-			foo[index + 1] = p;
-			return string.Join("", foo);
+			return "garf";
 		}
 	}
 }

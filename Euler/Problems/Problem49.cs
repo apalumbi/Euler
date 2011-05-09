@@ -32,7 +32,7 @@ namespace Euler.Problems {
 		}
 
 		bool AllPermutations(int first, int second, int third) {
-			var permutations = new PermutationGenerator<string>(first.ToString().Select(c => c.ToString()).ToList()).GetAllPermutations();
+			var permutations = new PermutationGenerator<string>(first.ToStringList()).GetAllPermutations();
 
 			return permutations.Contains(first.ToString()) &&
 						 permutations.Contains(second.ToString()) &&

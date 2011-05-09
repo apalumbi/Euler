@@ -13,7 +13,7 @@ namespace Euler.Problems {
 				answer = answer * i;
 			}
 
-			return answer.ToString().ToArray().Select(c => int.Parse(c.ToString())).Sum().ToString();
+			return answer.ToString().Select(c => int.Parse(c.ToString())).Sum().ToString();
 
 		}
 	}

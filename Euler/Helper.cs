@@ -43,7 +43,7 @@ namespace Euler {
 		public static bool IsPalindrome(string text) {
 			return text == string.Join("", text.Reverse());
 		}
-		
+
 		public static List<BigInteger> BuildFibonnaci(int numberOfTerms) {
 			var fibs = new List<BigInteger> { 0, 1 };
 
@@ -150,7 +150,7 @@ namespace Euler {
 						 i.Nines > 1 || i.Zeros > 0;
 		}
 
-		static Instances CountInstances(string number) {
+		public static Instances CountInstances(string number) {
 			var instances = new Instances();
 			foreach (var n in number) {
 				if (n == '1') instances.Ones++;
@@ -181,7 +181,7 @@ namespace Euler {
 						 i.Nines == ninesCount && i.Zeros == zerosCount;
 		}
 
-		class Instances {
+		public class Instances {
 			public int Ones = 0;
 			public int Twos = 0;
 			public int Threes = 0;
