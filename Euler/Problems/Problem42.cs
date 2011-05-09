@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Numerics;
 
 namespace Euler.Problems {
 	public class Problem42 : Problem {
 
 		public override string Solve() {
-			var triangles = new HashSet<double>();
+			var triangles = new HashSet<BigInteger>();
 			for (int i = 1; i <= 1000; i++) {
-				triangles.Add(Formula(i));
+				triangles.Add(Formulas.Triangle(i));
 			}
 
 			var words = File.ReadAllText(@"Files\" + this.Name).Replace("\"", "").Split(',').ToList();
@@ -27,8 +28,8 @@ namespace Euler.Problems {
 			return triangleWordsCount.ToString();
 		}
 
-		double Formula(int number) {
-			return .5 * number * (number + 1);
+		public override string Solution {
+			get { return "162"; }
 		}
 	}
 }

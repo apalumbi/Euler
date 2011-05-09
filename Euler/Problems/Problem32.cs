@@ -26,7 +26,6 @@ namespace Euler.Problems {
 					if (Helper.IsPandigital(number)) {
 						if (!results.Contains(product)) {
 							results.Add(product);
-							Helper.Write(number);
 						}
 					}
 				}
@@ -37,6 +36,10 @@ namespace Euler.Problems {
 				sum += r;
 			}
 			return sum.ToString();
+		}
+
+		public override string Solution {
+			get { return "45228"; }
 		}
 	}
 }

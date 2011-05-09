@@ -50,7 +50,10 @@ namespace Euler.Problems {
 			}
 
 			return crunch.Max().ToString();
+		}
 
+		public override string Solution {
+			get { return "7273"; }
 		}
 	}
 }

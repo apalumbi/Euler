@@ -15,8 +15,15 @@ namespace Euler {
 				Helper.Write("Starting: " + problem.Name);
 				var start = DateTime.Now;
 				var answer = problem.Solve();
-				Helper.Write("The Answer For " + problem.Name + " is: " + answer);
+				Helper.Write(problem.Name + " calculated the following: " + answer);
 				Helper.Copy(answer);
+				if (!String.IsNullOrEmpty(problem.Solution)) {
+					Helper.Write("The proper solution is: " + problem.Solution);
+
+					if (answer != problem.Solution) {
+						Helper.Write("!!!!!!!!!!!!!!!!!!!!!!!Answer is now incorrect!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					}
+				}
 				Helper.Write("It took " + (DateTime.Now - start) + " to calculate the answer");
 			}
 			

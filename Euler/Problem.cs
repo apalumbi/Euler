@@ -10,5 +10,7 @@ namespace Euler {
 		public string Name {
 			get { return this.GetType().Name; }
 		}
+
+		public virtual string Solution { get { return ""; } }
 	}
 }

@@ -7,7 +7,7 @@ namespace Euler.Problems {
 	public class Problem37 : Problem {
 		
 		public override string Solve() {
-			var primes = Helper.BuildPrimes(1000000);
+			var primes = Helper.BuildPrimes();
 
 			var results = new List<int>();
 			foreach (var prime in primes) {
@@ -15,15 +15,11 @@ namespace Euler.Problems {
 					results.Add(prime);
 				}
 			}
-
-			foreach (var item in results) {
-				Helper.Write(item);
-			}
-
+			
 			return results.Sum().ToString();
 		}
 
-		static bool IsTruncatable(int prime, HashSet<int> primes) {
+		bool IsTruncatable(int prime, HashSet<int> primes) {
 
 			if (prime < 10) return false;
 			var numberList = prime.ToString().ToList();
@@ -45,6 +41,10 @@ namespace Euler.Problems {
 			}
 
 			return true;
+		}
+
+		public override string Solution {
+			get { return "748317"; }
 		}
 	}
 }

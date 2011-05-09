@@ -8,7 +8,7 @@ namespace Euler.Problems {
 		List<int> primes = new List<int>();
 		long value = 600851475143;
 		public override string Solve() {
-			primes = Helper.BuildPrimes(1000000).ToList();
+			primes = Helper.BuildPrimes().ToList();
 
 			var result = ValueGetsUsThere();
 			return primes[result].ToString();
@@ -19,6 +19,10 @@ namespace Euler.Problems {
 				if ((value % primes[i]) == 0) return i;
 			}
 			return -1;
+		}
+
+		public override string Solution {
+			get { return "6857"; }
 		}
 	}
 }

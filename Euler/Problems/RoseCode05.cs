@@ -5,8 +5,8 @@ namespace Euler.Problems {
 	public class RoseCode05 : Problem {
 
 		public override string Solve() {
-			var limit = 100000;
-			var primeLookup = Helper.BuildPrimes(100000);
+			var limit = 1000;
+			var primeLookup = Helper.BuildPrimes();
 			var primes = primeLookup.Where(p => p < limit).ToList();
 
 			var pairs = new HashSet<string>();
@@ -26,6 +26,10 @@ namespace Euler.Problems {
 			}
 			
 			return pairs.Count.ToString();
+		}
+		
+		public override string Solution {
+			get { return "764"; }
 		}
 	}
 }

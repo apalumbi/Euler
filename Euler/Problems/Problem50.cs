@@ -30,8 +30,11 @@ namespace Euler.Problems {
 				}
 			}
 
-			return solutionSum + " -- " + lastPrimeUsed.ToString() + " -- " + mostConsecutive.ToString();
+			return solutionSum.ToString();
+		}
 
+		public override string Solution {
+			get { return "997651"; }
 		}
 	}
 }

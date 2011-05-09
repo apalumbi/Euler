@@ -8,6 +8,8 @@ using System.Numerics;
 
 namespace Euler {
 	public static class Helper {
+		public static string GARF { get { return "garf!"; } }
+
 		public static void WriteAndCopy(object output) {
 			Write(output);
 			Copy(output);
@@ -21,7 +23,7 @@ namespace Euler {
 			//Clipboard.SetDataObject(result.ToString(), false, 5, 200);
 		}
 
-		public static HashSet<int> BuildPrimes(int topNumber, int bottomNumber = 2) {
+		public static HashSet<int> BuildPrimes(int topNumber = 1000000, int bottomNumber = 2) {
 			var primeNumbers = new HashSet<int>();
 			var numbers = new BitArray(topNumber, true);
 			for (int i = 2; i < topNumber; i++)
@@ -64,6 +66,17 @@ namespace Euler {
 				}
 			}
 			return divisors;
+		}
+
+		public static List<int> GetFactors(int number, IEnumerable<int> primes) {
+			foreach (var prime in primes.Where(p => p < number)) {
+				if (number % prime == 0) {
+					var listOne = GetFactors(prime, primes);
+					var listTwo = GetFactors(number / prime, primes);
+					return listOne.Union(listTwo).ToList();
+				}
+			}
+			return new List<int> { number };
 		}
 
 		public static BigInteger BuildFactorial(BigInteger number) {
@@ -192,6 +205,27 @@ namespace Euler {
 			public int Eights = 0;
 			public int Nines = 0;
 			public int Zeros = 0;
+		}
+
+		public static string ConvertToBase(BigInteger numberToConvert, int toBase) {
+			var result = "";
+			var remainderIsGreaterThanBase = true;
+			var workingNumber = numberToConvert;
+			while (remainderIsGreaterThanBase) {
+				var remainder = workingNumber / toBase;
+
+				var product = remainder * toBase;
+				var difference = workingNumber - product;
+				result = difference + result;
+				if (remainder < toBase) {
+					remainderIsGreaterThanBase = false;
+					result = remainder + result;
+				}
+				else {
+					workingNumber = remainder;
+				}
+			}
+			return BigInteger.Parse(result).ToString();
 		}
 	}
 }

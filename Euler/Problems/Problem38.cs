@@ -15,19 +15,16 @@ namespace Euler.Problems {
 				if (Helper.CannotBePandigital(i.ToString())) {
 					continue;
 				}
-				else {
-					results = Do(i);
-					if (results.Count() > 0) {
-						break;
-					}
+				results = Do(i);
+				if (results.Count() > 0) {
+					break;
 				}
 			}
-			Helper.Write(string.Join(Environment.NewLine, results));
 
 			return results.Last().Second.ToString();
 		}
-		
-		private static List<Pair<int, int>> Do(BigInteger numberToCheck) {
+
+		List<Pair<int, int>> Do(BigInteger numberToCheck) {
 			for (int i = 9000; i < 10000; i++) {
 				var shouldContinue = true;
 				var pairs = new List<Pair<int, int>>();
@@ -35,7 +32,7 @@ namespace Euler.Problems {
 				var numberString = numberToCheck.ToString();
 				var productString = "";
 				while (shouldContinue) {
-					var product  = i * n;
+					var product = i * n;
 					productString += product.ToString();
 					if (numberString.StartsWith(productString)) {
 						pairs.Add(new Pair<int, int>(n, i));
@@ -45,7 +42,7 @@ namespace Euler.Problems {
 					}
 
 					if (productString == numberString) {
-						pairs.Add(new Pair<int,int>(0, int.Parse(numberString)));
+						pairs.Add(new Pair<int, int>(0, int.Parse(numberString)));
 						return pairs;
 					}
 					n++;
@@ -53,19 +50,9 @@ namespace Euler.Problems {
 			}
 			return new List<Pair<int, int>>();
 		}
-	}
 
-
-	public class Pair<T, U> {
-		public T First;
-		public U Second;
-		public Pair(T first, U second) {
-			First = first;
-			Second = second;
-		}
-
-		public override string ToString() {
-			return First.ToString() + " X " + Second.ToString();
+		public override string Solution {
+			get { return "932718654"; }
 		}
 	}
 }

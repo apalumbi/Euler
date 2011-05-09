@@ -21,5 +21,9 @@ namespace Euler.Problems {
 
 			return counter.ToString();
 		}
+
+		public override string Solution {
+			get { return "171"; }
+		}
 	}
 }

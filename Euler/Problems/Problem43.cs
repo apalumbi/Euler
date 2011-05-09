@@ -43,5 +43,9 @@ namespace Euler.Problems {
 
 			return wasDivisible ? BigInteger.Parse(string.Join("", numberString)) : 0;
 		}
+
+		public override string Solution {
+			get { return "16695334890"; }
+		}
 	}
 }

@@ -44,7 +44,11 @@ namespace Euler.Problems {
 				}
 			}
 
-			return "garf";
+			return Helper.GARF;
+		}
+
+		public override string Solution {
+			get { return "121313"; }
 		}
 	}
 }

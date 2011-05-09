@@ -14,7 +14,10 @@ namespace Euler.Problems {
 			}
 
 			return answer.ToString().Select(c => int.Parse(c.ToString())).Sum().ToString();
+		}
 
+		public override string Solution {
+			get { return "648"; }
 		}
 	}
 }

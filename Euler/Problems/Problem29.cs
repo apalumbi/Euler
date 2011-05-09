@@ -16,9 +16,12 @@ namespace Euler.Problems {
 			}
 
 			var distinct = allResults.Distinct();
-
-			Helper.Write(string.Join(", ", distinct.OrderBy(n => n).ToArray()));
+			
 			return distinct.Count().ToString();
+		}
+
+		public override string Solution {
+			get { return "9183"; }
 		}
 	}
 }

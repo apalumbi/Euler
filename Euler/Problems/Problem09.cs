@@ -13,13 +13,17 @@ namespace Euler.Problems {
 						if (((i * i) + (j * j)) == (k * k)) {
 							if ((i + j + k) == 1000) {
 								long product = i * j * k;
-								return i.ToString() + " " + j.ToString() + " " + k.ToString() + " = " + product;
+								return product.ToString();
 							}
 						}
 					}
 				}
 			}
-			return "garf";
+			return Helper.GARF;
+		}
+
+		public override string Solution {
+			get { return "31875000"; }
 		}
 	}
 }

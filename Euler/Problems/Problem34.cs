@@ -21,7 +21,6 @@ namespace Euler.Problems {
 				}
 				if (sum == i) {
 					results.Add(i);
-					Helper.Write(i);
 				}
 			}
 
@@ -31,6 +30,10 @@ namespace Euler.Problems {
 				total += r;
 			}
 			return total.ToString();
+		}
+
+		public override string Solution {
+			get { return "40730"; }
 		}
 	}
 }

@@ -13,8 +13,11 @@ namespace Euler.Problems {
 			}
 
 			var result = sum.ToString();
-			Helper.Write(result);
 			return result.Substring(result.Length - 10, 10);
+		}
+
+		public override string Solution {
+			get { return "9110846700"; }
 		}
 	}
 }

@@ -29,5 +29,9 @@ namespace Euler.Problems {
 
 			return (sum + 1).ToString();
 		}
+
+		public override string Solution {
+			get { return "669171001"; }
+		}
 	}
 }

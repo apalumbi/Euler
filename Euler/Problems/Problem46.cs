@@ -17,7 +17,7 @@ namespace Euler.Problems {
 				bool isGoldy = false;
 				for (int j = 0; j < i; j++) {
 					foreach (var prime in primes) {
-						var numberToCheck = Formula(j, prime);
+						var numberToCheck = GoldBach(j, prime);
 						if (numberToCheck > i) {
 							break;
 						}
@@ -33,11 +33,15 @@ namespace Euler.Problems {
 					return i.ToString();
 				}
 			}
-			return "garf";
+			return Helper.GARF;
 		}
 
-		private int Formula(int j, int prime) {
+		int GoldBach(int j, int prime) {
 			return prime + (2*j*j);
+		}
+
+		public override string Solution {
+			get { return "5777"; }
 		}
 	}
 }

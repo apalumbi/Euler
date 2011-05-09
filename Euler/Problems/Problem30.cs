@@ -7,7 +7,7 @@ namespace Euler.Problems {
 	public class Problem30 : Problem {
 		public override string Solve() {
 			var results = new List<double>();
-			for (int i = 2; i < 10000000; i++) {
+			for (int i = 2; i < 500000; i++) {
 				string number = i.ToString();
 				var numbers = number.ToList();
 				double sum = 0;
@@ -22,8 +22,11 @@ namespace Euler.Problems {
 				}
 			}
 
-			Helper.Write(string.Join(",", results.ToArray()));
 			return results.Sum().ToString();
+		}
+
+		public override string Solution {
+			get { return "443839"; }
 		}
 	}
 }

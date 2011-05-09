@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Numerics;
 
 namespace Euler.Problems {
 	public class Problem33 : Problem {
 		public override string Solve() {
-			var denominators = new List<decimal>();
+			var denominators = new List<BigInteger>();
 			var numbersToSkip = new HashSet<decimal> { 10, 20, 30, 40, 50, 60, 70, 80, 90 };
 			for (decimal numerator = 10; numerator < 100; numerator++) {
 				for (decimal denominator = 10; denominator < 100; denominator++) {
@@ -30,15 +31,14 @@ namespace Euler.Problems {
 						var newNumerator = RemoveNumber(numberInBoth.Value, numerator);
 						var two = newNumerator / newDenominator;
 						if (one == two) {
-							denominators.Add(denominator);
-							Helper.Write(numerator + "/" + denominator);
-							Helper.Write(newNumerator + "/" + newDenominator);
-							Helper.Write("----");
+							denominators.Add(BigInteger.Parse(newDenominator.ToString()));
 						}
 					}
 				}
 			}
-			return "did it by hand from output";
+
+			var product = denominators[0] * denominators[1] * denominators[2];
+			return product.ToString();
 		}
 
 		decimal? GetNumberInboth(decimal numerator, decimal denominator) {
@@ -60,6 +60,10 @@ namespace Euler.Problems {
 				return numberInBoth;
 			}
 			return decimal.Parse(num.ToString().Replace(numberInBoth.ToString(), ""));
+		}
+
+		public override string Solution {
+			get { return "100"; }
 		}
 	}
 }

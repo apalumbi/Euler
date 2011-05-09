@@ -86,6 +86,21 @@ namespace Euler {
 			return elements;
 		}
 
+		public string GetSpecificPermutation(int permuationToGet) {
+			var currentPermutatation = 0;
+			while (currentPermutatation < permuationToGet - 1) {
+				GetNext();
+				currentPermutatation++;
+			}
+			var perm = GetNext();
+			var result = "";
+			foreach (var p in perm) {
+				result += p.Second.ToString();
+			}
+			return result;
+		}
+
+
 		public HashSet<string> GetAllPermutations() {
 			var results = new HashSet<string>();
 			while (HasMore) {

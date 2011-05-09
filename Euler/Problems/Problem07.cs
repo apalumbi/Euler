@@ -7,7 +7,11 @@ namespace Euler.Problems {
 	public class Problem07 : Problem {
 
 		public override string Solve() {
-			return Helper.BuildPrimes(1000000).ToList()[10001].ToString();
+			return Helper.BuildPrimes().ToList()[10000].ToString();
+		}
+
+		public override string Solution {
+			get { return "104743"; }
 		}
 	}
 }

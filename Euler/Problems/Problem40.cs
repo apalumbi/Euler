@@ -35,5 +35,9 @@ namespace Euler.Problems {
 			allNumbers += numberString;
 			return numberString.Length;
 		}
+
+		public override string Solution {
+			get { return "210"; }
+		}
 	}
 }

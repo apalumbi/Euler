@@ -31,9 +31,12 @@ namespace Euler.Problems {
 					total += i;
 				}
 			}
-
-
+			
 			return total.ToString();
+		}
+
+		public override string Solution {
+			get { return "4179871"; }
 		}
 	}
 }

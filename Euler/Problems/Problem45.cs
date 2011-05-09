@@ -13,9 +13,9 @@ namespace Euler.Problems {
 			var hexagonals = new HashSet<BigInteger>();
 
 			for (int i = 0; i < 1000000; i++) {
-				pentagonals.Add(Pentagonal(i));
-				triangles.Add(Triangle(i));
-				hexagonals.Add(Hexogonal(i));
+				pentagonals.Add(Formulas.Pentagonal(i));
+				triangles.Add(Formulas.Triangle(i));
+				hexagonals.Add(Formulas.Hexogonal(i));
 			}
 
 			var results = new List<BigInteger>();
@@ -25,20 +25,11 @@ namespace Euler.Problems {
 				}
 			}
 
-			Helper.Write(string.Join(Environment.NewLine, results));
 			return results.Last().ToString();
 		}
-
-		BigInteger Pentagonal(BigInteger number) {
-			return number * ((3 * number) - 1) / 2;
-		}
-
-		BigInteger Triangle(BigInteger number) {
-			return number * (number + 1) / 2;
-		}
-
-		BigInteger Hexogonal(BigInteger number) {
-			return number * ((2 * number) - 1);
+		
+		public override string Solution {
+			get { return "1533776805"; }
 		}
 	}
 }

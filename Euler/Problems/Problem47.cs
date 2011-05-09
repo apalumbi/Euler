@@ -7,12 +7,12 @@ namespace Euler.Problems {
 	public class Problem47 : Problem {
 		
 		public override string Solve() {
-			var primes = Helper.BuildPrimes(1000000).OrderByDescending(p => p).ToList();
+			var primes = Helper.BuildPrimes().OrderByDescending(p => p).ToList();
 			var numberToLookFor = 4;
 			var consecutive = 0;
 			var results = new List<int>();
 			var allNumbers = new List<int>();
-			for (int i = 100000; i < 150000; i++) {
+			for (int i = 130000; i < 140000; i++) {
 				allNumbers.Add(i);
 			}
 
@@ -34,14 +34,14 @@ namespace Euler.Problems {
 				}
 
 				if (consecutive == numberToLookFor) {
-					return string.Join(",", results);
+					return results.Min().ToString();
 				}
 			}
 
-			return "";
+			return Helper.GARF;
 		}
 
-		private List<int> GetFactors(int i, IEnumerable<int> primes) {
+		List<int> GetFactors(int i, IEnumerable<int> primes) {
 			foreach (var prime in primes.Where(p => p < i)) {
 				if (i % prime == 0) {
 					var listOne = GetFactors(prime, primes);
@@ -50,6 +50,10 @@ namespace Euler.Problems {
 				}
 			}
 			return new List<int>{ i };
+		}
+
+		public override string Solution {
+			get { return "134043"; }
 		}
 	}
 }

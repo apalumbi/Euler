@@ -12,7 +12,7 @@ namespace Euler.Problems {
 
 			for (int n = 23; n <= 100; n++) {
 				for (int r = 1; r < n; r++) {
-					var result = nCr(n, r);
+					var result = Formulas.nCr(n, r);
 					if (result > 1000000) {
 						count++;
 					}
@@ -21,9 +21,9 @@ namespace Euler.Problems {
 			return count.ToString();
 		}
 
-		BigInteger nCr(int n, int r) {
-			var result = Helper.BuildFactorial(n) / (Helper.BuildFactorial(r) * Helper.BuildFactorial(n - r));
-			return result;
+		public override string Solution {
+			get { return "4075"; }
 		}
+		
 	}
 }

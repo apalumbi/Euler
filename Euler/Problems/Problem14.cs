@@ -20,6 +20,10 @@ namespace Euler.Problems {
 			return startingNumberForMaxIterations.ToString();
 		}
 
+		public override string Solution {
+			get { return "837799"; }
+		}
+
 		long Iterate(long startingNumber) {
 			long iterationNumber = startingNumber;
 			long iterations = 1;

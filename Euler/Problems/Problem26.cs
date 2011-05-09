@@ -37,5 +37,9 @@ namespace Euler.Problems {
 			}
 			return maxd.ToString();
 		}
+
+		public override string Solution {
+			get { return "983"; }
+		}
 	}
 }

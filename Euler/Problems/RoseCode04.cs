@@ -5,7 +5,7 @@ namespace Euler.Problems {
 	public class RoseCode04 : Problem {
 
 		public override string Solve() {
-			var primes = Helper.BuildPrimes(1000000).Where(p => p < 1000000).ToList();
+			var primes = Helper.BuildPrimes().Where(p => p < 1000000).ToList();
 
 			var pairs = new List<Pair<int, int>>();
 			for (int i = 0; i < primes.Count - 1; i++) {
@@ -23,6 +23,10 @@ namespace Euler.Problems {
 			}
 
 			return distance.ToString();
+		}
+		
+		public override string Solution {
+			get { return "1452"; }
 		}
 	}
 }

@@ -30,88 +30,47 @@ namespace Euler.Problems {
 {01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48}};
 
 			long maxProduct = 1;
-			int a = 0;
-			int b = 0;
-			int c = 0;
-			int d = 0;
 			for (int i = 0; i < 20; i++) {
 				for (int j = 0; j < 17; j++) {
 					long product = grid[i, j] * grid[i, j + 1] * grid[i, j + 2] * grid[i, j + 3];
 					if (product > maxProduct) {
-						a = grid[i, j];
-						b = grid[i, j + 1];
-						c = grid[i, j + 2];
-						d = grid[i, j + 3];
+						
 						maxProduct = product;
 					}
 				}
 			}
-			Helper.Write("across");
-			Helper.Write(a.ToString() + " * " + b.ToString() + " * " + c.ToString() + " * " + d.ToString());
-			Helper.Write(maxProduct);
 
-			maxProduct = 1;
-			a = 0;
-			b = 0;
-			c = 0;
-			d = 0;
 			for (int i = 0; i < 17; i++) {
 				for (int j = 0; j < 20; j++) {
 					long product = grid[i, j] * grid[i + 1, j] * grid[i + 2, j] * grid[i + 3, j];
 					if (product > maxProduct) {
-						a = grid[i, j];
-						b = grid[i + 1, j];
-						c = grid[i + 2, j];
-						d = grid[i + 3, j];
 						maxProduct = product;
 					}
 				}
 			}
-			Helper.Write("down");
-			Helper.Write(a.ToString() + " * " + b.ToString() + " * " + c.ToString() + " * " + d.ToString());
-			Helper.Write(maxProduct);
 
-			maxProduct = 1;
-			a = 0;
-			b = 0;
-			c = 0;
-			d = 0;
 			for (int i = 0; i < 17; i++) {
 				for (int j = 0; j < 17; j++) {
 					long product = grid[j, i] * grid[j + 1, i + 1] * grid[j + 2, i + 2] * grid[j + 3, i + 3];
 					if (product > maxProduct) {
-						a = grid[j, i];
-						b = grid[j + 1, i + 1];
-						c = grid[j + 2, i + 2];
-						d = grid[j + 3, i + 3];
 						maxProduct = product;
 					}
 				}
 			}
-			Helper.Write("diag1");
-			Helper.Write(a.ToString() + " * " + b.ToString() + " * " + c.ToString() + " * " + d.ToString());
-			Helper.Write(maxProduct);
 
-			maxProduct = 1;
-			a = 0;
-			b = 0;
-			c = 0;
-			d = 0;
 			for (int i = 0; i < 17; i++) {
 				for (int j = 3; j < 20; j++) {
 					long product = grid[i, j] * grid[i + 1, j - 1] * grid[i + 2, j - 2] * grid[i + 3, j - 3];
 					if (product > maxProduct) {
-						a = grid[j, i];
-						b = grid[i + 1, j - 1];
-						c = grid[i + 2, j - 2];
-						d = grid[i + 3, j - 3];
 						maxProduct = product;
 					}
 				}
 			}
-			Helper.Write("diag2");
-			Helper.Write(a.ToString() + " * " + b.ToString() + " * " + c.ToString() + " * " + d.ToString());
 			return maxProduct.ToString();
+		}
+
+		public override string Solution {
+			get { return "70600674"; }
 		}
 	}
 }

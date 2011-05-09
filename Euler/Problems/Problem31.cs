@@ -6,7 +6,7 @@ using System.Text;
 namespace Euler.Problems {
 	public class Problem31 : Problem {
 		int totalCombinations = 0;
-		int amountToFind = 100;
+		int amountToFind = 200;
 
 		public override string Solve() {
 			var coin1 = new Coin { Value = 1, MaxUses = amountToFind / 1 };
@@ -46,6 +46,10 @@ namespace Euler.Problems {
 					GetCombinations(index + 1, runningAmount, coins);
 				}
 			}
+		}
+
+		public override string Solution {
+			get { return "73682"; }
 		}
 	}
 

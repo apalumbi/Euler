@@ -10,8 +10,8 @@ namespace Euler.Problems {
 		public override string Solve() {
 			var pentagonals = new List<BigInteger>();
 			var pentagonalsLookup = new HashSet<BigInteger>();
-			for (BigInteger i = 1; i < 10000; i++) {
-				var p = Formula(i);
+			for (BigInteger i = 1; i < 5000; i++) {
+				var p = Formulas.Pentagonal(i);
 				pentagonals.Add(p);
 				pentagonalsLookup.Add(p);
 			}
@@ -23,18 +23,16 @@ namespace Euler.Problems {
 					var diff = pentagonals[j] - pentagonals[i];
 
 					if (pentagonalsLookup.Contains(sum) && pentagonalsLookup.Contains(diff)) {
-						var text = sum + " -- " + diff;
-						Helper.Write(text);
-						results.Add(text);
+						results.Add(diff.ToString());
 					}
 				}
 			}
-			
-			return "garf";
-		}
 
-		BigInteger Formula(BigInteger number) {
-			return number * ((3 * number) - 1 ) / 2;
+			return results.Last();
+		}
+		
+		public override string Solution {
+			get { return "5482660"; }
 		}
 	}
 }

@@ -6,7 +6,7 @@ using System.Text;
 namespace Euler.Problems {
 	public class Problem27 : Problem {
 		public override string Solve() {
-			var primes = Helper.BuildPrimes(1000000);
+			var primes = Helper.BuildPrimes();
 
 			var primeCount = 0;
 			var bigA = 0;
@@ -22,7 +22,7 @@ namespace Euler.Problems {
 								bigA = a;
 								bigB = b;
 								primeCount = i + 1;
-								answers.Add(bigA + " and " + bigB + " produced " + primeCount + " consecutive primes.    " + bigA * bigB);
+								answers.Add((bigA * bigB).ToString());
 							}
 							break;
 						}
@@ -30,16 +30,16 @@ namespace Euler.Problems {
 
 				}
 			}
-
-			foreach (var a in answers) {
-				Helper.Write(a);
-			}
-
-			return answers.Last();
+			
+			return "-" + answers.Last();
 		}
 
 		int Formula(int i, int a, int b) {
 			return (i * i) - (a * i) + b;
+		}
+
+		public override string Solution {
+			get { return "-59231"; }
 		}
 	}
 }

@@ -7,17 +7,19 @@ namespace Euler.Problems {
 	public class Problem39 : Problem {
 
 		public override string Solve() {
-			var pairs = new List<Pair<string, int>>();
+			var maxCount = 0;
+			var result = 0;
 			for (int i = 1; i < 1000; i++) {
-				var pair = FindIntegrals(i);
-				pairs.Add(pair);
+				var count = FindIntegralsCount(i);
+				if (count > maxCount) {
+					maxCount = count;
+					result = i;
+				}
 			}
-			var maxPair = pairs.OrderByDescending(p => p.Second).First();
-			Helper.Write(maxPair.First.ToString());
-			return maxPair.Second.ToString();
+			return result.ToString();
 		}
 
-		private static Pair<string, int> FindIntegrals(int limit) {
+		int FindIntegralsCount(int limit) {
 			var integrals = "";
 			var count = 0;
 			var alreadyAdded = new HashSet<string>();
@@ -27,7 +29,7 @@ namespace Euler.Problems {
 					if (a + b > limit) {
 						break;
 					}
-					var c = QuadraticFormula(a, b);
+					var c = Formulas.QuadraticFormula(a, b);
 					if (c + a + b == limit) {
 						var list = new List<string> { a.ToString(), b.ToString(), c.ToString() };
 						list.Sort();
@@ -39,15 +41,12 @@ namespace Euler.Problems {
 					}
 				}
 			}
-			
-			return new Pair<string, int>(integrals, count);
+
+			return count;
 		}
 
-
-		private static double QuadraticFormula(int a, int b) {
-			var aSquaredPlusbSquared = (a * a) + (b * b);
-			var c = Math.Sqrt(aSquaredPlusbSquared);
-			return c;
+		public override string Solution {
+			get { return "840"; }
 		}
 	}
 }

@@ -19,7 +19,11 @@ namespace Euler.Problems {
 				sumOfSquares += i * i;
 			}
 			long result = squareOfSum - sumOfSquares;
-			return sumOfSquares.ToString() + " - " + squareOfSum.ToString() + " = " + result.ToString();
+			return result.ToString();
+		}
+
+		public override string Solution {
+			get { return "25164150"; }
 		}
 	}
 }

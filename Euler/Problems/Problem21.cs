@@ -12,20 +12,19 @@ namespace Euler.Problems {
 			for (int i = 1; i <= 10000; i++) {
 				GetAmicables(amicables, i);
 			}
-
-			amicables.ForEach(a => Helper.Write(a));
-			
 			return amicables.Sum().ToString();
-
 		}
 
-		static void GetAmicables(List<int> amicables, int number) {
+		void GetAmicables(List<int> amicables, int number) {
 			var divisors = Helper.GetDivisors(number);
 			var divisors2 = Helper.GetDivisors(divisors.Sum());
 			if (divisors2.Sum() == number && divisors.Sum() != divisors2.Sum()) {
 				amicables.Add(number);
 			}
+		}
 
+		public override string Solution {
+			get { return "31626"; }
 		}
 	}
 }

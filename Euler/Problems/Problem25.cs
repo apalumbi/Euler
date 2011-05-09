@@ -20,8 +20,11 @@ namespace Euler.Problems {
 				termCount++;
 			}
 
-			Helper.Write(currentTerm);
 			return termCount.ToString();
+		}
+
+		public override string Solution {
+			get { return "4782"; }
 		}
 	}
 }

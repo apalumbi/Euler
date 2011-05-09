@@ -13,7 +13,7 @@ namespace Euler.Problems {
 			for (int i = 100; i < 1000; i++) {
 				for (int j = 100; j < 1000; j++) {
 					long product = i * j;
-					if (IsPalindrom(product)) {
+					if (Helper.IsPalindrome(product.ToString())) {
 						if (product > currentMax) {
 							bigI = i;
 							bigJ = j;
@@ -22,18 +22,11 @@ namespace Euler.Problems {
 					}
 				}
 			}
-			return currentMax.ToString() + " from " + bigI + " * " + bigJ;
+			return currentMax.ToString();
 		}
 
-		bool IsPalindrom(long i) {
-			bool result = true;
-			char[] numbers = i.ToString().ToCharArray();
-			for (int index = 0; index < numbers.Length; index++) {
-				if (numbers[index] != numbers[Math.Abs(index - numbers.Length) - 1]) {
-					result = false ;
-				}
-			}
-			return result;
+		public override string Solution {
+			get { return "906609"; }
 		}
 	}
 }

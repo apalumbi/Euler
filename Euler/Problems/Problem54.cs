@@ -46,7 +46,6 @@ namespace Euler.Problems {
 					}
 				}
 			}
-			Helper.Write(ties.ToString());
 			return player1wins.ToString();
 		}
 
@@ -181,6 +180,10 @@ namespace Euler.Problems {
 				return 10;
 			}
 			return int.Parse(card);
+		}
+
+		public override string Solution {
+			get { return "376"; }
 		}
 
 		class PlayerResult {

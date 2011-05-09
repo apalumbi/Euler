@@ -12,7 +12,11 @@ namespace Euler.Problems {
 				}
 			}
 
-			return "garf";
+			return Helper.GARF;
+		}
+
+		public override string Solution {
+			get { return "218922995834555169026"; }
 		}
 	}
 }

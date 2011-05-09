@@ -34,5 +34,8 @@ namespace Euler.Problems {
 				}
 			}
 		}
-	}
+
+		public override string Solution {
+			get { return "76576500"; }
+		} 	}
 }
