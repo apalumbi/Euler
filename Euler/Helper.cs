@@ -42,6 +42,25 @@ namespace Euler {
 			return primeNumbers;
 		}
 
+		public static bool IsPrime(int number) {
+			if (number == 1) return false;
+			if (number < 4) return true;
+			if (number % 2 == 0) return false;
+			if (number < 9) return true;
+			if (number % 3 == 0) return false;
+
+			var floor = Math.Floor(Math.Sqrt(number));
+			var plusMinus = 5;
+			while (plusMinus <= floor) {
+				if (number % plusMinus == 0) return false;
+
+				if (number % (plusMinus + 2) == 0) return false;
+				plusMinus = plusMinus + 6;
+			}
+
+			return true;
+		}
+
 		public static bool IsPalindrome(string text) {
 			return text == string.Join("", text.Reverse());
 		}

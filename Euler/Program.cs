@@ -8,7 +8,10 @@ namespace Euler {
 		static void Main(string[] args) {
 			
 			var problems = new List<Problem> {
-				new Problem58(),
+				new Problem32(),
+				new Problem38(),
+				new Problem43(),
+				new Problem47(),
 			};
 						
 			foreach (var problem in problems) {
