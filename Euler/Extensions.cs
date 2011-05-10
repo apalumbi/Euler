@@ -17,5 +17,13 @@ namespace Euler {
 		public static List<string> ToStringList(this BigInteger number) {
 			return number.ToString().Select(c => c.ToString()).ToList();
 		}
+
+		public static BigInteger Reverse(this BigInteger number) {
+			return BigInteger.Parse(string.Join("", number.ToString().Reverse()));
+		}
+
+		public static int Reverse(this int number) {
+			return int.Parse(string.Join("", number.ToString().Reverse()));
+		}
 	}
 }
