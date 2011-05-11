@@ -7,7 +7,7 @@ namespace Euler.Problems {
 	public class Problem47 : Problem {
 		
 		public override string Solve() {
-			var primes = Helper.BuildPrimes().OrderByDescending(p => p).ToList();
+			var primes = Helper.BuildPrimes();
 			var numberToLookFor = 4;
 			var consecutive = 0;
 			var results = new List<int>();
