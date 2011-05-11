@@ -8,7 +8,7 @@ namespace Euler.Problems {
 	public class Problem57 : Problem {
 		public override string Solve() {
 			var count = 0;
-			
+
 			BigInteger numerator = 3;
 			BigInteger denominator = 2;
 
@@ -36,6 +36,10 @@ namespace Euler.Problems {
 			}
 
 			return count.ToString();
+		}
+
+		public override string Solution {
+			get { return "153"; }
 		}
 	}
 }

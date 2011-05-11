@@ -7,10 +7,6 @@ namespace Euler.Problems {
 	public class Problem58 : Problem {
 
 		public override string Solve() {
-			//var primeLookup = Helper.BuildPrimes(400000000);
-			//var primeLookup2 = Helper.BuildPrimes(800000000, 400000000);
-			//var lastPrimeOnHand1 = primeLookup.Last();
-			//var lastPrimeOnHand2 = primeLookup2.Last();
 			var number = 1;
 			var increment = 0;
 			var numberCount = 1;

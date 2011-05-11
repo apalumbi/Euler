@@ -12,5 +12,9 @@ namespace Euler {
 		}
 
 		public virtual string Solution { get { return ""; } }
+
+		public bool ShouldCheckAnswer {
+			get { return !String.IsNullOrEmpty(Solution); }
+		}
 	}
 }

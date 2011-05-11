@@ -19,7 +19,6 @@ namespace Euler.Problems {
 				value += i;
 			}
 			results.Sort();
-			Helper.Write(i - 1);
 			return results[results.Count - 1].ToString();
 
 		}

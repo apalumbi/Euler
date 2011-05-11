@@ -16,7 +16,6 @@ namespace Euler.Problems {
 					startingNumberForMaxIterations = startingNumber;
 				}
 			}
-			Helper.Write(maxIteration);
 			return startingNumberForMaxIterations.ToString();
 		}
 

@@ -8,7 +8,7 @@ namespace Euler.Problems {
 
 		public override string Solve() {
 			var results = new List<BigInteger>();
-			for (BigInteger i = 0; i < 10000000; i++) {
+			for (BigInteger i = 0; i < 5000000; i++) {
 				var baseFour = Helper.ConvertToBase(i, 4);
 				if (!Helper.IsPalindrome(baseFour)) {
 					continue;
@@ -22,7 +22,6 @@ namespace Euler.Problems {
 
 			BigInteger sum = 0;
 			foreach (var result in results) {
-				Helper.Write(result);
 				sum += result;
 			}
 			return sum.ToString();

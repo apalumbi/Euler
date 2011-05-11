@@ -25,8 +25,6 @@ namespace Euler.Problems {
 				}
 			}
 
-			Helper.Write(string.Join(Environment.NewLine, results));
-
 			return results.LastOrDefault();
 		}
 

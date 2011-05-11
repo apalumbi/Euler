@@ -8,10 +8,11 @@ namespace Euler.Problems {
 	public class Problem97 : Problem {
 
 		public override string Solve() {
-			BigInteger expon = BigInteger.Pow(2,24036583);
+			//BigInteger expon = BigInteger.Pow(2,24036583);
 
-			var answerString = (expon + 1).ToString();
-			return answerString.Substring(answerString.Length - 10, 10);
+			//var answerString = (expon + 1).ToString();
+			//return answerString.Substring(answerString.Length - 10, 10);
+			return "";
 		}
 	}
 }
