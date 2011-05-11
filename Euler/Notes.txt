@@ -1,0 +1,14 @@
+﻿Problem15 was incorrect. Calculated: To Be Solved Again Solution: 137846528820
+Problem17 was incorrect. Calculated: To Be Solved Again Solution: 21124
+
+10 slowest
+RoseCode06 ran for 73.955
+Problem38 ran for 49.638
+Problem52 ran for 31.743
+Problem47 ran for 26.455
+Problem32 ran for 20.275
+Problem43 ran for 10.358
+Problem45 ran for 5.788
+Problem49 ran for 5.666
+Problem39 ran for 5.567
+Problem44 ran for 4.476

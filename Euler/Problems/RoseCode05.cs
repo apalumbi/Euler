@@ -6,16 +6,15 @@ namespace Euler.Problems {
 
 		public override string Solve() {
 			var limit = 1000;
-			var primeLookup = Helper.BuildPrimes();
-			var primes = primeLookup.Where(p => p < limit).ToList();
+			var primes = Helper.BuildPrimes().Where(p => p < limit).ToList();
 
 			var pairs = new HashSet<string>();
 			foreach (var i in primes) {
 				foreach (var j in primes) {
 					var number1 = int.Parse(i.ToString() + j.ToString());
 					var number2 = int.Parse(j.ToString() + i.ToString());
-					if (primeLookup.Contains(number1) &&
-							primeLookup.Contains(number2)) {
+					if (Helper.IsPrime(number1) &&
+							Helper.IsPrime(number2)) {
 						var order = new List<int> {i, j};
 						order.Sort();
 						if (!pairs.Contains(order[0].ToString() + order[1].ToString())) {

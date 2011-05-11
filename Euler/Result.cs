@@ -12,6 +12,6 @@ namespace Euler {
 
 		public bool Correct { get { return CalculatedAnswer == Solution; } }
 
-		public string Output { get { return "Calculated Answer: " + CalculatedAnswer + " - Running Time: " + RunningTime; } }
+		public string Output { get { return "Calculated Answer: " + CalculatedAnswer; } }
 	}
 }

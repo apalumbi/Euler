@@ -14,6 +14,9 @@ namespace Euler.Problems {
 				}
 
 				for (BigInteger j = 0; j < 10000; j++) {
+					if (i.ToString().Length == j.ToString().Length) {
+						continue;
+					}
 					if (Helper.CannotBePandigital(j.ToString())) {
 						continue;
 					}

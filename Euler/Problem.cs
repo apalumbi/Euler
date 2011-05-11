@@ -11,10 +11,7 @@ namespace Euler {
 			get { return this.GetType().Name; }
 		}
 
-		public virtual string Solution { get { return ""; } }
+		public virtual string Solution { get { return "Not Solved Yet"; } }
 
-		public bool ShouldCheckAnswer {
-			get { return !String.IsNullOrEmpty(Solution); }
-		}
 	}
 }
