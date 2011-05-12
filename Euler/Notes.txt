@@ -4,31 +4,16 @@ Problem59 was incorrect. Calculated: 2347 Solution: Not Solved Yet
 Problem97 was incorrect. Calculated:  Solution: Not Solved Yet
 
 10 slowest
-Problem38 ran for 67.853
-Problem32 ran for 25.288
-RoseCode06 ran for 21.842
-Problem47 ran for 14.244
-Problem43 ran for 8.868
-Problem49 ran for 7.2
-Problem39 ran for 7.183
-Problem45 ran for 5.804
-Problem44 ran for 5.705
-Problem23 ran for 4.854
+Problem32 ran for 26.851
+RoseCode06 ran for 21.105
+Problem47 ran for 15.691
+Problem38 ran for 12.759
+Problem43 ran for 8.852
+Problem39 ran for 7.393
+Problem44 ran for 6.628
+Problem49 ran for 6.35
+Problem45 ran for 5.461
+Problem23 ran for 3.742
 
-Total time to run 68 problems: 194.251 seconds
-Average problem running time: 2.85663235294118 seconds
-
-10 slowest
-RoseCode06 ran for 75.773
-Problem38 ran for 54.823
-Problem32 ran for 25.679
-Problem47 ran for 16.37
-Problem39 ran for 7.44
-Problem43 ran for 6.326
-Problem45 ran for 6.099
-Problem44 ran for 5.913
-Problem49 ran for 5.422
-Problem23 ran for 3.349
-
-Total time to run 68 problems: 228.8 seconds
-Average problem running time: 3.36470588235294 seconds
+Total time to run 68 problems: 138.3 seconds
+Average problem running time: 2.03382352941176 seconds
