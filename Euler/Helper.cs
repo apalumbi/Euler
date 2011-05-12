@@ -60,9 +60,16 @@ namespace Euler {
 
 			return true;
 		}
-
+		
 		public static bool IsPalindrome(string text) {
-			return text == string.Join("", text.Reverse());
+			var j = text.Length - 1;
+			for (int i = 0; i < text.Length; i++) {
+				if (text[i] != text[j]) {
+					return false;
+				}
+				j--;
+			}
+			return true;
 		}
 
 		public static List<BigInteger> BuildFibonnaci(int numberOfTerms) {
@@ -226,7 +233,7 @@ namespace Euler {
 			public int Zeros = 0;
 		}
 
-		public static string ConvertToBase(BigInteger numberToConvert, int toBase) {
+		public static string ConvertToBase(long numberToConvert, int toBase) {
 			var result = "";
 			var remainderIsGreaterThanBase = true;
 			var workingNumber = numberToConvert;
@@ -244,7 +251,7 @@ namespace Euler {
 					workingNumber = remainder;
 				}
 			}
-			return BigInteger.Parse(result).ToString();
+			return result.TrimStart('0');
 		}
 	}
 }

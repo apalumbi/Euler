@@ -2,8 +2,8 @@ namespace Euler.Problems {
 	public class Problem36 : Problem {
 
 		public override string Solve() {
-			var sum = 0;
-			for (int i = 0; i < 1000000; i++) {
+			var sum = 0l;
+			for (long i = 0; i < 1000000; i++) {
 				if (Helper.IsPalindrome(i.ToString())) {
 					if (Helper.IsPalindrome(Helper.ConvertToBase(i, 2))) {
 						sum += i;

@@ -11,7 +11,8 @@
     <RootNamespace>Euler</RootNamespace>
     <AssemblyName>Euler</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -124,6 +125,7 @@
     <Compile Include="Result.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Files\Problem42">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

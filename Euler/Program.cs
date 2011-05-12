@@ -8,8 +8,8 @@ namespace Euler {
 	class Program {
 		[STAThread]
 		static void Main(string[] args) {
-			//var problems = GetAllClasses("Euler.Problems");
-			var problems = new List<Problem> { new Problem52() };
+			var problems = GetAllClasses("Euler.Problems");
+			//var problems = new List<Problem> { new RoseCode06() };
 			var start = DateTime.Now;
 
 			var results = new List<Result>();
