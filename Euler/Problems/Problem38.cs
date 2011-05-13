@@ -8,13 +8,11 @@ namespace Euler.Problems {
 	public class Problem38 : Problem {
 
 		public override string Solve() {
-			BigInteger largestPandigital = 987654321;
 			var results = new List<Pair<int, int>>();
 
-			for (BigInteger i = largestPandigital; i > 918273645; i--) {
-				if (Helper.CannotBePandigital(i.ToString())) {
-					continue;
-				}
+			var perms = new PermutationGenerator<string>(new List<string> {"9", "8", "7", "6", "5", "4", "3", "2", "1"}).GetAllPermutations();
+
+			foreach (var i in perms) {
 				results = Do(i);
 				if (results.Count() > 0) {
 					break;
@@ -24,7 +22,7 @@ namespace Euler.Problems {
 			return results.Last().Second.ToString();
 		}
 
-		List<Pair<int, int>> Do(BigInteger numberToCheck) {
+		List<Pair<int, int>> Do(string numberToCheck) {
 			for (int i = 9000; i < 10000; i++) {
 				var shouldContinue = true;
 				var pairs = new List<Pair<int, int>>();

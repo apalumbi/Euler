@@ -19,11 +19,11 @@ namespace Euler {
 		}
 
 		public static BigInteger Reverse(this BigInteger number) {
-			return BigInteger.Parse(string.Join("", number.ToString().Reverse()));
+			return BigInteger.Parse(new string(number.ToString().Reverse().ToArray()));
 		}
 
 		public static int Reverse(this int number) {
-			return int.Parse(string.Join("", number.ToString().Reverse()));
+			return int.Parse(new string(number.ToString().Reverse().ToArray()));
 		}
 	}
 }

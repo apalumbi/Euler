@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Euler.Problems {
 	public class Problem47 : Problem {
-		
+		Dictionary<int, List<int>> factorsLookup = new Dictionary<int, List<int>>();
+
 		public override string Solve() {
 			var primes = Helper.BuildPrimes();
 			var numberToLookFor = 4;
@@ -23,7 +24,6 @@ namespace Euler.Problems {
 					continue;
 				}
 				var factors = GetFactors(i, primes);
-
 				if (factors.Count == numberToLookFor) {
 					consecutive++;
 					results.Add(i);
@@ -43,13 +43,24 @@ namespace Euler.Problems {
 
 		List<int> GetFactors(int i, IEnumerable<int> primes) {
 			foreach (var prime in primes.Where(p => p < i)) {
+				if (factorsLookup.ContainsKey(i)) {
+					return factorsLookup[i];
+				}
+
 				if (i % prime == 0) {
 					var listOne = GetFactors(prime, primes);
 					var listTwo = GetFactors(i/prime, primes);
-					return listOne.Union(listTwo).ToList();
+					var factors = listOne.Union(listTwo).ToList();
+					if (!factorsLookup.ContainsKey(i)) {
+						factorsLookup.Add(i, factors);
+					}
+					return factors;
 				}
 			}
-			return new List<int>{ i };
+			if (!factorsLookup.ContainsKey(i)) {
+				factorsLookup.Add(i, new List<int> { i });
+			}
+			return factorsLookup[i];
 		}
 
 		public override string Solution {

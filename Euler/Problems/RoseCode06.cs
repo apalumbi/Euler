@@ -7,8 +7,8 @@ namespace Euler.Problems {
 	public class RoseCode06 : Problem {
 
 		public override string Solve() {
-			var results = new List<BigInteger>();
-			for (BigInteger i = 0; i < 8000000; i++) {
+			var results = new List<long>();
+			for (long i = 0; i < 8000000; i++) {
 				var baseFour = Helper.ConvertToBase(i, 4);
 				if (!Helper.IsPalindrome(baseFour)) {
 					continue;
@@ -20,11 +20,7 @@ namespace Euler.Problems {
 				results.Add(i);
 			}
 
-			BigInteger sum = 0;
-			foreach (var result in results) {
-				sum += result;
-			}
-			return sum.ToString();
+			return results.Sum().ToString();
 		}
 
 		public override string Solution {

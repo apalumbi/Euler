@@ -25,7 +25,7 @@ namespace Euler.Problems {
 			var numberList = prime.ToString().ToList();
 
 			while (numberList.Count != 0) {
-				if (!primes.Contains(int.Parse(string.Join("", numberList.ToArray())))) {
+				if (!primes.Contains(int.Parse(new string(numberList.ToArray())))) {
 					return false;
 				}
 				numberList.RemoveAt(0);
@@ -34,7 +34,7 @@ namespace Euler.Problems {
 			var numberList2 = prime.ToString().ToList();
 
 			while (numberList2.Count != 0) {
-				if (!primes.Contains(int.Parse(string.Join("", numberList2.ToArray())))) {
+				if (!primes.Contains(int.Parse(new string(numberList2.ToArray())))) {
 					return false;
 				}
 				numberList2.RemoveAt(numberList2.Count - 1);
