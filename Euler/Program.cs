@@ -9,7 +9,7 @@ namespace Euler {
 		[STAThread]
 		static void Main(string[] args) {
 			//var problems = GetAllClasses("Euler.Problems");
-			var problems = new List<Problem> { new Problem59() };
+			var problems = new List<Problem> { new Problem05() };
 			var start = DateTime.Now;
 
 			var results = new List<Result>();
