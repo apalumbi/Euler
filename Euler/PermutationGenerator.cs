@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using System;
+using System.Linq;
 
 namespace Euler {
 	public class PermutationGenerator<T> {
@@ -117,74 +118,43 @@ namespace Euler {
 
 	public class PermutationGenerator2 {
 
-		private int[] a;
-		private int n;
-		private int r;
-		private BigInteger numLeft;
-		private BigInteger total;
+		int[] indexes;
 
-		public PermutationGenerator2(int n, int r) {
-			if (r > n) {
-				throw new ArgumentException();
-			}
-			if (n < 1) {
-				throw new ArgumentException();
-			}
-			this.n = n;
-			this.r = r;
-			a = new int[r];
-			BigInteger nFact = GetFactorial(n);
-			BigInteger rFact = GetFactorial(r);
-			BigInteger nminusrFact = GetFactorial(n - r);
-			total = nFact / (rFact * nminusrFact);
-			Reset();
+		public PermutationGenerator2() { }
+
+		public List<string> GetAllPermutations(string textToPermute) {
+			var list = textToPermute.ToStringList();
+			var limit = list.Count;
+			indexes = new int[limit];
+			var results = new List<string>();
+
+			Iterate(new HashSet<int>(), limit, list, results);
+
+			return results;
 		}
 
-		private static BigInteger GetFactorial(int n) {
-			BigInteger fact = 1;
-			for (BigInteger i = n; i > 1; i--) {
-				fact = fact * i;
-			}
-			return fact;
-		}
-
-		public void Reset() {
-			for (int i = 0; i < a.Length; i++) {
-				a[i] = i;
-			}
-			numLeft = total;
-		}
-
-		public BigInteger NumLeft {
-			get { return numLeft; }
-		}
-
-		public bool HasMore {
-			get { return numLeft >= 1; }
-		}
-
-		public BigInteger Total {
-			get { return total; }
-		}
-
-		public int[] GetNext() {
-
-			if (numLeft == total) {
-				numLeft = numLeft - 1;
-				return a;
+		List<string> Iterate(HashSet<int> indexList, int limit, List<string> list, List<string> results) {
+			if (indexes.Count() == indexList.Count) {
+				var result = "";
+				foreach (var index in indexList) {
+					result += list[index];
+				}
+				results.Add(result);
+				return results;
 			}
 
-			int i = r - 1;
-			while (a[i] == n - r + i) {
-				i--;
-			}
-			a[i] = a[i] + 1;
-			for (int j = i + 1; j < r; j++) {
-				a[j] = a[i] + j - i;
-			}
+			for (var counter = 0; counter < limit; counter++) {
+				if (!indexList.Contains(counter)) {
+					var newIndexList = new HashSet<int>();
+					foreach (var item in indexList) {
+						newIndexList.Add(item);
+					}
 
-			numLeft = numLeft - 1;
-			return a;
+					newIndexList.Add(counter);
+					Iterate(newIndexList, limit, list, results);
+				}
+			}
+			return results;
 		}
 	}
 }

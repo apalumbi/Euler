@@ -19,7 +19,7 @@ namespace Euler.Problems {
 		}
 
 		bool ContainsSameNumberWhenMultiplied(int number, int multiplication) {
-			var perms = new PermutationGenerator<string>(number.ToStringList()).GetAllPermutations();
+			var perms = new PermutationGenerator2().GetAllPermutations(number.ToString());
 			var doubleNumber = number * multiplication;
 			if (perms.Contains(doubleNumber.ToString())) {
 				return true;
