@@ -121,6 +121,7 @@
     <Compile Include="Problems\RoseCode05.cs" />
     <Compile Include="Problems\RoseCode06.cs" />
     <Compile Include="Problems\RoseCode07.cs" />
+    <Compile Include="Problems\RoseCode12.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />

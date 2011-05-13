@@ -107,7 +107,15 @@ namespace Euler {
 
 		public static BigInteger BuildFactorial(BigInteger number) {
 			var temp = number;
-			for (int i = 1; i < number; i++) {
+			for (int i = 1; i <= number; i++) {
+				temp *= i;
+			}
+			return temp;
+		}
+
+		public static int BuildFactorial(int number) {
+			var temp = number;
+			for (int i = 1; i <= number; i++) {
 				temp *= i;
 			}
 			return temp;
