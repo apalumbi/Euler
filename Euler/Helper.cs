@@ -42,7 +42,7 @@ namespace Euler {
 			return primeNumbers;
 		}
 
-		public static bool IsPrime(int number) {
+		public static bool IsPrime(long number) {
 			if (number == 1) return false;
 			if (number < 4) return true;
 			if (number % 2 == 0) return false;
