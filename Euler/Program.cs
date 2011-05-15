@@ -9,7 +9,7 @@ namespace Euler {
 		[STAThread]
 		static void Main(string[] args) {
 			//var problems = GetAllClasses("Euler.Problems");
-			var problems = new List<Problem> { new Problem62() };
+			var problems = new List<Problem> { new Problem64() };
 			var start = DateTime.Now;
 
 			var results = new List<Result>();
@@ -26,6 +26,7 @@ namespace Euler {
 					Helper.Write(result.ProblemName + " was incorrect. Calculated: " + result.CalculatedAnswer + " Solution: " + result.Solution);
 				}
 			}
+
 			Helper.Write("");
 			Helper.Write("10 slowest");
 			foreach (var result in results.OrderByDescending(r => r.RunningTime).Take(10)) {
@@ -36,6 +37,11 @@ namespace Euler {
 			var runningTime = (DateTime.Now - start);
 			Helper.Write("Total time to run " + problems.Count + " problems: " + runningTime.TotalSeconds + " seconds");
 			Helper.Write("Average problem running time: " + runningTime.TotalSeconds / problems.Count + " seconds");
+
+			if (results.Count == 1) {
+				Helper.Copy(results.First().CalculatedAnswer);
+			}
+
 			Console.ReadLine();
 		}
 
