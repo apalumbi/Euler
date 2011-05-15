@@ -18,6 +18,10 @@ namespace Euler {
 			return number.ToString().Select(c => c.ToString()).ToList();
 		}
 
+		public static List<string> ToStringList(this long number) {
+			return number.ToString().Select(c => c.ToString()).ToList();
+		}
+
 		public static BigInteger Reverse(this BigInteger number) {
 			return BigInteger.Parse(new string(number.ToString().Reverse().ToArray()));
 		}

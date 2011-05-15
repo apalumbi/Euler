@@ -60,7 +60,7 @@ namespace Euler {
 
 			return true;
 		}
-		
+
 		public static bool IsPalindrome(string text) {
 			var j = text.Length - 1;
 			for (int i = 0; i < text.Length; i++) {
@@ -256,19 +256,6 @@ namespace Euler {
 						 i.Nines == ninesCount && i.Zeros == zerosCount;
 		}
 
-		public class Instances {
-			public int Ones = 0;
-			public int Twos = 0;
-			public int Threes = 0;
-			public int Fours = 0;
-			public int Fives = 0;
-			public int Sixes = 0;
-			public int Sevens = 0;
-			public int Eights = 0;
-			public int Nines = 0;
-			public int Zeros = 0;
-		}
-
 		public static string ConvertToBase(long numberToConvert, int toBase) {
 			var result = "";
 			var remainderIsGreaterThanBase = true;
@@ -288,6 +275,51 @@ namespace Euler {
 				}
 			}
 			return result.TrimStart('0');
+		}
+	}
+
+	public class Instances : IComparable {
+		public int Ones = 0;
+		public int Twos = 0;
+		public int Threes = 0;
+		public int Fours = 0;
+		public int Fives = 0;
+		public int Sixes = 0;
+		public int Sevens = 0;
+		public int Eights = 0;
+		public int Nines = 0;
+		public int Zeros = 0;
+
+		string stringValue = "";
+		public string StringValue {
+			get {
+				if (string.IsNullOrEmpty(stringValue)) {
+					stringValue = Ones.ToString() + Twos.ToString() +
+												Threes.ToString() + Fours.ToString() +
+												Fives.ToString() + Sixes.ToString() +
+												Sevens.ToString() + Eights.ToString() +
+												Nines.ToString() + Nines.ToString();
+				}
+				return stringValue;
+			}
+		}
+
+		public override bool Equals(object obj) {
+			var that = obj as Instances;
+			if (that == null) return false;
+
+			return this.StringValue == that.StringValue;
+		}
+
+		public override int GetHashCode() {
+			return this.StringValue.GetHashCode();
+		}
+
+		public int CompareTo(object obj) {
+			var that = obj as Instances;
+			if (that == null) return -1;
+
+			return this.StringValue.CompareTo(that.StringValue);
 		}
 	}
 }
