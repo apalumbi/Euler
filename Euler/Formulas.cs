@@ -14,8 +14,20 @@ namespace Euler {
 			return number * (number + 1) / 2;
 		}
 
+		public static BigInteger Square(BigInteger number) {
+			return number * number;
+		}
+
 		public static BigInteger Hexogonal(BigInteger number) {
 			return number * ((2 * number) - 1);
+		}
+
+		public static BigInteger Heptagonal(BigInteger number) {
+			return number * (5 * number - 3) / 2;
+		}
+
+		public static BigInteger Octogonal(BigInteger number) {
+			return number * (3 * number - 2);
 		}
 
 		public static double QuadraticFormula(int a, int b) {
