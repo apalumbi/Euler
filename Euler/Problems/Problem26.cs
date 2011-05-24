@@ -7,35 +7,38 @@ namespace Euler.Problems {
 	public class Problem26 : Problem {
 
 		public override string Solve() {
-			int max = 0;
-			int maxd = 0;
-			for (int d = 2; d < 1000; ++d) {
-				var reminders = new HashSet<int>();
-				int x = 1;
-				int len = 0;
-				while (x < d)
-					x *= 10;
+			int maxLength = 0;
+			int result = 0;
 
-				while (x != 0) {
-					if (reminders.Contains(x))
-						break;
+			for (int numberToDivide = 2; numberToDivide < 1000; ++numberToDivide) {
+				var alreadyChecked = new HashSet<int>();
+				int remainder = 1;
+				int length = 0;
 
-					reminders.Add(x);
-
-					while (x < d) {
-						x *= 10;
-						len++;
-					}
-					x = x % d;
+				while (remainder < numberToDivide) {
+					remainder *= 10;
 				}
-				if (x != 0) {
-					if (len > max) {
-						maxd = d;
-						max = len;
+				
+				while (remainder != 0) {
+					if (alreadyChecked.Contains(remainder)) {
+						break;
+					}
+
+					alreadyChecked.Add(remainder);
+					while (remainder < numberToDivide) {
+						remainder *= 10;
+						length++;
+					}
+					remainder = remainder % numberToDivide;
+				}
+				if (remainder != 0) {
+					if (length > maxLength) {
+						result = numberToDivide;
+						maxLength = length;
 					}
 				}
 			}
-			return maxd.ToString();
+			return result.ToString();
 		}
 
 		public override string Solution {

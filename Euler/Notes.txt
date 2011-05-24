@@ -1,19 +1,19 @@
 ﻿Problem15 was incorrect. Calculated: To Be Solved Again Solution: 137846528820
 Problem17 was incorrect. Calculated: To Be Solved Again Solution: 21124
-Problem59 was incorrect. Calculated: 2347 Solution: Not Solved Yet
 Problem97 was incorrect. Calculated:  Solution: Not Solved Yet
+RoseCode12 was incorrect. Calculated: garf! Solution: Not Solved Yet
 
 10 slowest
-Problem32 ran for 26.851
-RoseCode06 ran for 21.105
-Problem47 ran for 15.691
-Problem38 ran for 12.759
-Problem43 ran for 8.852
-Problem39 ran for 7.393
-Problem44 ran for 6.628
-Problem49 ran for 6.35
-Problem45 ran for 5.461
-Problem23 ran for 3.742
+Problem32 ran for 41.537
+RoseCode06 ran for 29.244
+Problem47 ran for 23.584
+Problem38 ran for 20.845
+Problem43 ran for 11.958
+Problem62 ran for 10.255
+Problem49 ran for 10.194
+Problem39 ran for 10.04
+Problem44 ran for 9.217
+Problem45 ran for 7.509
 
-Total time to run 68 problems: 138.3 seconds
-Average problem running time: 2.03382352941176 seconds
+Total time to run 75 problems: 219.474 seconds
+Average problem running time: 2.92632 seconds

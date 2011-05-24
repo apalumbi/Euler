@@ -20,7 +20,7 @@ namespace Euler {
 		}
 
 		public static void Copy(object result) {
-			Clipboard.SetText(result.ToString());
+			//Clipboard.SetText(result.ToString());
 		}
 
 		public static HashSet<int> BuildPrimes(int topNumber = 1000000, int bottomNumber = 2) {
@@ -105,17 +105,17 @@ namespace Euler {
 			return new List<int> { number };
 		}
 
-		public static BigInteger BuildFactorial(BigInteger number) {
+		public static long BuildFactorialUsingLongs(long number) {
 			var temp = number;
-			for (int i = 1; i <= number; i++) {
+			for (int i = 1; i < number; i++) {
 				temp *= i;
 			}
 			return temp;
 		}
 
-		public static int BuildFactorial(int number) {
+		public static BigInteger BuildFactorial(BigInteger number) {
 			var temp = number;
-			for (int i = 1; i <= number; i++) {
+			for (int i = 1; i < number; i++) {
 				temp *= i;
 			}
 			return temp;
@@ -125,12 +125,12 @@ namespace Euler {
 			var points = 0;
 			var chars = name.ToCharArray();
 			foreach (var c in chars) {
-				points += AlphabetPosition(c);
+				points += AlphabetPosition(c, true);
 			}
 			return points;
 		}
 
-		public static int AlphabetPosition(char letter) {
+		public static int AlphabetPosition(char letter, bool ignoreSpaces = false) {
 			switch (letter.ToString()) {
 				case "A":
 				case "a":
@@ -211,7 +211,7 @@ namespace Euler {
 				case "z":
 					return 26;
 				case " ":
-					return 1234;
+					return ignoreSpaces ? 0 : 1234;
 				default:
 					return 0;
 			}
@@ -276,8 +276,25 @@ namespace Euler {
 			}
 			return result.TrimStart('0');
 		}
-	}
 
+		public static List<long> ContinuedFraction(long number) {
+			var periods = new List<long>();
+			var square = (long)Math.Sqrt(number);
+			var period = square;
+			long numerator = 0;
+			long denominator = 1;
+			do {
+				periods.Add(period);
+				numerator = period * denominator - numerator;
+				denominator = (number - numerator * numerator) / denominator;
+				period = (numerator + square) / denominator;
+			} while (denominator != 1);
+
+			periods.Add(period);
+			return periods;
+		}
+	}
+	
 	public class Instances : IComparable {
 		public int Ones = 0;
 		public int Twos = 0;
